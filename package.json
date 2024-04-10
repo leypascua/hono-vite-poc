@@ -1,0 +1,36 @@
+{
+  "name": "hono-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"vite build --watch\"",
+    "build": "vite build && rimraf ./dist/ && tsc && rollup -c rollup.config.mjs && shx cp package.json ./dist && shx cp -r ./node_modules ./dist && shx cp -r ./wwwroot ./dist/wwwroot",
+    "start": "cross-env NODE_ENV=Production node dist/server.js",
+    "prod": "cross-env NODE_ENV=Production node server.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.9.0",
+    "hono": "^4.2.2"
+  },
+  "devDependencies": {
+    "@hono/vite-dev-server": "^0.10.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.11.17",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "cross-env": "7.0.3",
+    "glob": "^10.3.12",
+    "postcss": "^8.4.38",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.14.1",
+    "rollup-plugin-static-files": "^0.3.0",
+    "shx": "^0.3.4",
+    "tailwindcss": "^3.4.3",
+    "tsx": "^4.7.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.8"
+  }
+}
