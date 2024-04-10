@@ -8,6 +8,7 @@ const view = () => (
                 <img alt="a cat" src="/assets/cat.jpg" />
             </div>
         </Content>
+        <script type="text/javascript" defer src="/ui/scripts/page-one.js"></script>
     </Page>
 );
 

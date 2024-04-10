@@ -8,7 +8,8 @@
     "build": "vite build && rimraf ./dist/ && tsc && rollup -c rollup.config.mjs && shx cp package.json ./dist && shx cp -r ./node_modules ./dist && shx cp -r ./wwwroot ./dist/wwwroot",
     "start": "cross-env NODE_ENV=Production node dist/server.js",
     "prod": "cross-env NODE_ENV=Production node server.js",
-    "wrangler:dev": "concurrently \"vite build --watch\" \"wrangler dev\""
+    "wrangler:dev": "concurrently \"vite build --watch\" \"wrangler dev\"",
+    "wrangler:deploy": "wrangler deploy --minify src/app/server/wrangler.server.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.9.0",
@@ -19,6 +20,7 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@cloudflare/workers-types": "^4.20240403.0",
     "@types/node": "^20.11.17",
     "autoprefixer": "^10.4.19",
     "concurrently": "^8.2.2",
@@ -33,7 +35,6 @@
     "tsx": "^4.7.1",
     "typescript": "^5.2.2",
     "vite": "^5.2.8",
-    "@cloudflare/workers-types": "^4.20240403.0",
-    "wrangler": "^3.47.0"
+    "wrangler": "^3.48.0"
   }
 }

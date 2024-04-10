@@ -7,4 +7,8 @@ controller.get('/', (c) => {
     return c.render(IndexView());
 });
 
+controller.get('/about', (c) => {
+    return c.text('This is the about page.');
+});
+
 export default controller;

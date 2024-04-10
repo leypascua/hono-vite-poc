@@ -45,6 +45,7 @@ const Page = (props: PageProps) => {
     <html>
     <head>
         <title>${props.title || 'I am the default title'}</title>
+        <link rel="stylesheet" href="/ui/styles/custom.css">
         ${raw(headTexts)}
     </head>
     <body>

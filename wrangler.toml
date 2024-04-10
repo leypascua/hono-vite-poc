@@ -1,6 +1,10 @@
 name = "hono-vite-poc"
 main = "src/app/server/wrangler.server.ts"
 compatibility_date = "2023-12-01"
+compatibility_flags = [ "nodejs_compat" ]
+
+[dev]
+port = 5000
 
 [site]
 bucket = "./wwwroot"

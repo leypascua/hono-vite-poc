@@ -3,10 +3,6 @@ import publicApp from './web-public/app';
 
 const app = new Hono();
 
-app.route('/p', publicApp);
-
-app.get('/', (c) => {
-    return c.redirect('/p');
-})
+app.route('/', publicApp);
 
 export default app;
