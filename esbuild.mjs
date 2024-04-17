@@ -3,7 +3,10 @@ import esbuild from 'esbuild';
 // esbuild  src/app/server/node.server.ts --format=esm --outfile=dist/server.js --bundle --minify
 const isDev = process.argv[2] === '--watch';
 const args = {
-  platform: 'node', // https://esbuild.github.io/getting-started/#bundling-for-node
+  // https://esbuild.github.io/getting-started/#bundling-for-node
+  platform: 'node',
+  packages: 'external',
+
   entryPoints: ['./src/app/server/node.server.ts'],
   format: 'esm',
   outfile: './dist/server.js',
