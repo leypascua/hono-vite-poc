@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"vite\" \"vite build --watch\"",
-    "build": "vite build && rimraf ./dist/ && tsc && rollup -c rollup.config.mjs && shx cp package.json ./dist && shx cp -r ./node_modules ./dist && shx cp -r ./wwwroot ./dist/wwwroot",
+    "build": "vite build && rimraf ./dist/ && node esbuild.mjs && shx cp package.json ./dist && shx cp -r ./wwwroot ./dist/wwwroot",
     "start": "cross-env NODE_ENV=Production node dist/server.js",
     "prod": "cross-env NODE_ENV=Production node server.js",
     "wrangler:dev": "concurrently \"vite build --watch\" \"wrangler dev\"",
